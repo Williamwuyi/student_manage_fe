@@ -12,11 +12,7 @@ import UpdateScore from '@/components/score/UpdateScore'
 import cookies from 'js-cookie'
 import Vuex from 'vuex'
 
-
 Vue.use(Router)
-
-
-
 
 export default new Router({
   mode: 'history',
@@ -77,21 +73,13 @@ export default new Router({
           meta: {
             requireAuth: true
           }
-        },
-
-
+        }
       ]
     },
-
-
     {
       path: '/login',
       name: 'Login',
       component: Login
-    },
-
-
- ],
-
-
+    }
+  ]
 })

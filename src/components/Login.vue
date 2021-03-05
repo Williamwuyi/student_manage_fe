@@ -1,7 +1,5 @@
 <template>
   <body id="poster">
-
-
   <img class="title_show"
     src="../assets/title.png"
     width="600"
@@ -10,9 +8,7 @@
     title=""
     cursor="default">
 
-    <el-form class="login-container" label-position="left"
-             label-width="0px">
-
+    <el-form class="login-container" label-position="left" label-width="0px">
 
       <h3 class="login_title">系统登录</h3>
       <el-form-item>
@@ -32,44 +28,42 @@
 </template>
 
 <script>
-
-    export default {
-      name: 'Login',
-      data () {
-        return {
-          loginForm: {
-            adminName:'',
-            passWord: ''
-          },
-        }
-      },
-
-      methods: {
-        login () {
-          // this.$router.push({'path':'/information/select'})
-          // this.$router.push({'path':'/information/select'})
-
-          this.$axios.post('/login',this.loginForm)
-            .then(res => {
-              if (res.data.code === 200) {
-                this.$store.commit('SET_TOKEN',res.data.data.token)
-                this.$store.commit('GET_USER',res.data.data.name)
-                this.$message({
-                  message: '登陆成功',
-                  type: 'success'
-                })
-                this.$router.push({'path':'/information/select'})
-              }else {
-                this.$message({
-                  message: '登陆失败',
-                  type: 'error'
-                })
-              }
-            })
-        }
+export default {
+  name: 'Login',
+  data () {
+    return {
+      loginForm: {
+        adminName: '',
+        passWord: ''
       }
     }
+  },
 
+  methods: {
+    login () {
+      // this.$router.push({'path':'/information/select'})
+      // this.$router.push({'path':'/information/select'})
+
+      this.$axios.post('/login', this.loginForm)
+        .then(res => {
+          if (res.data.code === 200) {
+            this.$store.commit('SET_TOKEN', res.data.data.token)
+            this.$store.commit('GET_USER', res.data.data.name)
+            this.$message({
+              message: '登陆成功',
+              type: 'success'
+            })
+            this.$router.push({'path': '/information/select'})
+          } else {
+            this.$message({
+              message: '登陆失败',
+              type: 'error'
+            })
+          }
+        })
+    }
+  }
+}
 
 </script>
 

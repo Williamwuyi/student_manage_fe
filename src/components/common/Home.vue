@@ -6,15 +6,13 @@
 </template>
 
 <script>
-  import NavMenu from './NavMenu'
-  export default {
-    name: 'Home',
-    components: {NavMenu}
-  }
+import NavMenu from './NavMenu'
+export default {
+  name: 'Home',
+  components: {NavMenu}
+}
 </script>
 
 <style scoped>
 
 </style>
-
-
